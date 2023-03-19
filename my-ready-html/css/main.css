@@ -4,7 +4,7 @@ padding: 0;
 box-sizing: border-box;
 }
 :root {
-
+--index: calc(1vw+1vh)
 }
 @font-face {
 font-family: raleway_f;
@@ -30,6 +30,8 @@ display: flex;
 align-items: center;
 justify-content: center;
 text-align: center;
+overflow: hidden;
+position: relative;
 }
 .layer {
 height: 100%;
@@ -37,4 +39,36 @@ width: 100%;
 position: absolute;
 background-size: cover;
 background-position: center;
+will-change: transform;
+z-index: 2;
+}
+.layers_base {
+z-index: 0;
+transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+}
+.layers_middle {
+transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+.layers_front {
+transform: translate3d(0, calc(var(--scrollTop) / 5), 0);
+}
+.layer_header {
+z-index: 1;
+transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+will-change: transform;
+text-transform: uppercase;
+font-weight: 900;
+}
+.layer_tittle {
+font-size: calc(var(--index) * 2.5);
+letter-spacing: calc(var(--index) / 2.25);
+}
+.layer_caption {
+font-size: calc(var(--index) / 1.1);
+letter-spacing: calc(var(--index) / 3.5);
+margin-top
+}
+.main-article {
+min-height: 100vh;
+
 }
